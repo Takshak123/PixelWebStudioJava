@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Animal List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Animals</h1>
+    <table class="table table-striped mt-3">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Life Expectancy</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="animal : ${animals}">
+            <td th:text="${animal.name}"></td>
+            <td th:text="${animal.category}"></td>
+            <td th:text="${animal.description}"></td>
+            <td th:text="${animal.lifeExpectancy}"></td>
+            <td>
+                <img th:src="@{'/animalImage/' + ${animal.id}}" alt="Image" width="50"/>
+            </td>
+            <td>
+                <a th:href="@{'/animals/edit/' + ${animal.id}}" class="btn btn-primary btn-sm">Edit</a>
+                <a th:href="@{'/animals/delete/' + ${animal.id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/animals/new" class="btn btn-success">Add New Animal</a>
+</div>
+</body>
+</html>

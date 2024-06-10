@@ -1,0 +1,5 @@
+com\example\PixelWebStudioTask\controller\AnimalController.class
+com\example\PixelWebStudioTask\repository\AnimalRepository.class
+com\example\PixelWebStudioTask\Model\Animal.class
+com\example\PixelWebStudioTask\PixelWebStudioTaskApplication.class
+com\example\PixelWebStudioTask\service\AnimalService.class
